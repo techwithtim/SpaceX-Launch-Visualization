@@ -1,0 +1,52 @@
+{% from "launch_card.html" import render_launch %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpaceX Launches</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/styles.css')}}"
+    />
+  </head>
+  <body>
+    <h1>SpaceX Launches</h1>
+
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#successful"
+          >Successful</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#failed">Failed</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#upcoming">Upcoming</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="successful" class="container tab-pane active">
+        {% for launch in launches.successful %} {{render_launch(launch)}} {%
+        endfor %}
+      </div>
+      <div id="failed" class="container tab-pane fade">
+        {% for launch in launches.failed %} {{render_launch(launch)}} {% endfor
+        %}
+      </div>
+      <div id="upcoming" class="container tab-pane fade">
+        {% for launch in launches.upcoming %} {{render_launch(launch)}} {%
+        endfor %}
+      </div>
+    </div>
+  </body>
+</html>

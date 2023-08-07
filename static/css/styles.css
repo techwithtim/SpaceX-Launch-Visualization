@@ -1,0 +1,32 @@
+.launch-card {
+  border: 1px solid #eaeaea;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.launch-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.launch-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+
+.launch-title {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.launch-links a {
+  margin-right: 10px;
+}
